@@ -1,0 +1,126 @@
+.left_home {
+
+    position: fixed;
+    margin-top: 58px;
+    left: 6px;
+    max-height: 100vh;
+    width: 300px;
+    overflow-y: auto;
+    color: var(--color-primary);
+    padding: 15px 0;
+    padding-bottom: 5rem;
+    user-select: none;
+}
+
+.left_link {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.left_link img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 11px;
+    vertical-align: -0.25em;
+}
+
+.left_link span {
+    margin-bottom: 4px;
+    margin-left: 1px;
+}
+
+.col1 {
+    margin-left: 2px;
+    transform: translateY(-2px);
+}
+
+.col2 {
+    transform: translateX(-1px);
+    font-size: 12px;
+    color: var(--blue-color);
+    margin-left: 9px;
+    margin-top: 2px;
+    font-weight: normal;
+}
+
+.col2::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--blue-color);
+    position: absolute;
+    left: -10px;
+    bottom: 4px;
+}
+
+.rotate360 {
+    transform: rotate(180deg);
+}
+
+.splitter {
+    height: 1.3px;
+    background: var(--divider);
+    margin: 9px 2px 0px 12px;
+}
+
+.shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    padding: 13px 10px 11px 10px;
+}
+
+.edit_shortcut {
+    font-size: 14px;
+    color: var(--blue-color);
+    display: none;
+
+    cursor: pointer;
+}
+
+.shortcut:hover .edit_shortcut {
+    display: block;
+}
+
+.shortcut_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.shortcut_item img {
+    height: 36px;
+    width: 36px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.shortcut_item span {
+    margin-bottom: 3px;
+}
+
+.fb_copyright {
+    font-size: 12px;
+    color: var(--color-secondary);
+    justify-self: end;
+    margin-top: 2rem;
+}
