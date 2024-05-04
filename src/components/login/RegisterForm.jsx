@@ -92,7 +92,7 @@ export default function RegisterForm({ setOpenRegister }) {
       const { message, ...rest } = data;
       setTimeout(() => {
         dispatch({ type: "LOGIN", payload: rest });
-        Cookies.set("user", JSON.stringify(rest));
+        Cookies.set("user", JSON.stringify(rest), { expires: 3 });
         navigate("/");
       }, 2000);
     } catch (error) {

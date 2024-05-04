@@ -79,6 +79,7 @@ export default function LeftHome() {
           name="Instagram"
         />
       </div>
+      <div className="flex-1"></div>
 
       <div className="fb_copyright">
         <Link to={"/"}>Privacy </Link>

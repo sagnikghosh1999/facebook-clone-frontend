@@ -56,7 +56,7 @@ export default function LoginForm({ setOpenRegister }) {
       setSuccess(data.message);
       const { message, ...rest } = data;
       dispatch({ type: "LOGIN", payload: data });
-      Cookies.set("user", JSON.stringify(rest));
+      Cookies.set("user", JSON.stringify(rest), { expires: 3 });
       navigate("/");
     } catch (error) {
       setSuccess("");
@@ -110,7 +110,7 @@ export default function LoginForm({ setOpenRegister }) {
             )}
           </Formik>
 
-          <Link to="/forgot" className="forgot_password">
+          <Link to="/reset" className="forgot_password">
             Forgotten password?
           </Link>
           <ClipLoader color="#1876f2" loading={loading} size={30} />
