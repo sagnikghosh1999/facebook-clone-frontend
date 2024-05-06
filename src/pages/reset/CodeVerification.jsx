@@ -3,14 +3,40 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import LoginInput from "../../components/inputs/loginInput";
+import axios from "axios";
 
-export default function CodeVerification({ code, setCode, error }) {
+export default function CodeVerification({
+  code,
+  setCode,
+  error,
+  loading,
+  setLoading,
+  setError,
+  setVisible,
+  userInfos,
+}) {
   const validateCode = Yup.object({
     code: Yup.string()
       .required("Code is required")
       .min(5, "Code must be 5characters.")
       .max(5, "Code must be 5characters."),
   });
+  const verifyCode = async () => {
+    const { email } = userInfos;
+    try {
+      setLoading(true);
+      await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/validateresetcode`,
+        { email, code }
+      );
+      setError("");
+      setVisible(3);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setError(error.response.data.message);
+    }
+  };
   return (
     <div className="reset_form">
       <div className="reset_form_header">Code Verification</div>
@@ -23,6 +49,9 @@ export default function CodeVerification({ code, setCode, error }) {
           code,
         }}
         validationSchema={validateCode}
+        onSubmit={() => {
+          verifyCode();
+        }}
       >
         {(formik) => (
           <Form>

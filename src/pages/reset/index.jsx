@@ -68,10 +68,28 @@ export default function Reset() {
           />
         )}
         {visible === 1 && userInfos && (
-          <SendEmail userInfos={userInfos} error={error} />
+          <SendEmail
+            userInfos={userInfos}
+            email={email}
+            error={error}
+            setError={setError}
+            loading={loading}
+            setUserInfos={setUserInfos}
+            setVisible={setVisible}
+            setLoading={setLoading}
+          />
         )}
         {visible === 2 && (
-          <CodeVerification code={code} setCode={setCode} error={error} />
+          <CodeVerification
+            code={code}
+            setCode={setCode}
+            error={error}
+            setError={setError}
+            loading={loading}
+            setLoading={setLoading}
+            setVisible={setVisible}
+            userInfos={userInfos}
+          />
         )}
         {visible === 3 && (
           <ChangePassword
@@ -80,6 +98,11 @@ export default function Reset() {
             confPassword={confPassword}
             setConfPassword={setConfPassword}
             error={error}
+            setError={setError}
+            loading={loading}
+            setLoading={setLoading}
+            setVisible={setVisible}
+            userInfos={userInfos}
           />
         )}
       </div>

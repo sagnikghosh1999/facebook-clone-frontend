@@ -32,7 +32,7 @@ export default function SearchAccount({
       setUserInfos(data);
       setVisible(1);
       setError("");
-      console.log(data);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       setError(error.response.data.message);
