@@ -1,7 +1,7 @@
 .home {
     min-height: 100vh;
-    display: grid;
     background: var(--bg-secondary);
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -12,11 +12,12 @@
     transform: translateX(-50%);
 }
 
-@media (max-width:1175px) {
+@media (max-width: 1175px) {
 
+    .stories,
     .createPost,
-    .send_verification,
-    .stories {
+    .posts,
+    .send_verification {
         width: 84%;
     }
 
@@ -29,7 +30,7 @@
     }
 }
 
-@media (max-width:1030px) {
+@media (max-width: 1030px) {
 
     .left_home .left_link span,
     .left_home .left_link .col,
@@ -46,8 +47,8 @@
 
     .left_link {
         background: var(--bg-third);
-        height: 55px;
         width: 55px;
+        height: 55px;
         border-radius: 50%;
         display: grid;
         place-items: center;
@@ -58,14 +59,8 @@
         margin-left: 55px;
     }
 
-    .home_right {
+    .right_home {
         width: 20vw;
-    }
-
-    .createPost,
-    .send_verification,
-    .stories {
-        width: 100%;
     }
 
     .contacts_header_right {
@@ -75,9 +70,15 @@
     .contact_circle {
         width: 20px;
     }
+
+    .stories,
+    .createPost,
+    .send_verification {
+        width: 100%;
+    }
 }
 
-@media (max-width:960px) {
+@media (max-width: 960px) {
 
     .createPost,
     .send_verification {
@@ -93,8 +94,8 @@
     }
 
     .right_home {
-        width: 20vw;
         left: 78%;
+        width: 20vw;
     }
 
     .splitter1 {
@@ -102,7 +103,7 @@
     }
 
     .contact_circle {
-        width: 25px;
+        width: 30px;
     }
 
     .contacts_header_right {
@@ -110,7 +111,7 @@
     }
 }
 
-@media (max-width:885px) {
+@media (max-width: 885px) {
     .right_home {
         display: none;
     }
@@ -121,7 +122,7 @@
     }
 
     .stories {
-        width: 113%;
+        width: 112%;
     }
 
     .home_middle {
@@ -129,10 +130,9 @@
     }
 }
 
-@media (max-width:810px) {
-
+@media (max-width: 805px) {
     .stories {
-        grid-template-columns: repeat(6, 13vw);
+        grid-template-columns: repeat(6, 12.7vw);
     }
 
     .story_profile_name,
@@ -141,8 +141,7 @@
     }
 
     .create_story_card {
-        filter: brightness(90%);
-
+        filter: brightness(96%);
     }
 
     .stories .white_circle {
@@ -150,16 +149,20 @@
     }
 
     .story_profile_pic {
-        height: 7vw;
         width: 7vw;
+        height: 7vw;
     }
 
-    .left_home::-webkit-scrollbar-thumb {
+    .left_home::-webkit-scrollbar {
         display: none;
+    }
+
+    .popup {
+        width: 70vw !important;
     }
 }
 
-@media (max-width:640px) {
+@media (max-width: 620px) {
     .left_home {
         display: none;
     }
@@ -180,8 +183,7 @@
     }
 
     .stories {
-        grid-template-columns: repeat(6, 15vw);
-        gap: 6px;
+        grid-template-columns: repeat(6, 14vw);
     }
 
     .story,
@@ -189,46 +191,80 @@
         height: 30vw;
     }
 
+    .createPost_icon {
+        font-size: 12px;
+    }
+
     .open_post {
         font-size: 16px;
     }
 
-    .home_middle {
-        margin-top: 68px;
+    .createPost_icon svg {
+        width: 20px;
     }
-
-
 }
 
+@media (max-width: 400px) {
 
-/* ----Activate ------  */
+    .createPost,
+    .posts {
+        margin-top: 1rem;
+    }
 
+    .home_middle,
+    .createPost,
+    .posts {
+        width: 98%;
+        margin: 1rem auto;
+    }
+
+    .send_verification {
+        width: 98%;
+        margin: 0 auto;
+    }
+
+    .stories {
+        grid-template-columns: repeat(6, 13vw);
+        padding-left: 10px;
+    }
+
+    .home_middle {
+        margin: 56px auto;
+    }
+
+    .createPost_body {
+        padding: 5px 0;
+    }
+}
+
+/*-----Activate popup----*/
 .popup {
-    position: fixed;
-    height: 200px;
+    position: relative;
+    background: var(--bg-primary);
+    box-shadow: 0 1px 2px var(--shadow-1);
     width: 40vw;
+    height: 200px;
+    position: fixed;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 99;
     text-align: center;
-    background: var(--bg-primary);
-    box-shadow: 0 1px 2px var(--shadow-1);
     border-radius: 10px;
 }
 
 .popup_header {
-    font-weight: 600;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-weight: 600;
     border-bottom: 1px solid var(--bg-third);
     padding: 15px;
 }
 
 .popup_message {
-    font-weight: 500;
     padding: 15px;
+    font-weight: 500;
 }
 
-
-/* ----Activate ------  */
+/*-----Activate popup----*/
