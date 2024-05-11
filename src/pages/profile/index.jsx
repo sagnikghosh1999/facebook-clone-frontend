@@ -7,6 +7,9 @@ import { profileReducer } from "../../functions/reducers";
 import Header from "../../components/header";
 import "./style.css";
 import Cover from "./Cover";
+import ProfilePictureInfos from "./ProfilePictureInfos";
+import ProfileMenu from "./ProfileMenu";
+import PplYouMayKnow from "./PplYouMayKnow";
 
 export default function Profile({ getAllPosts }) {
   const [visible, setVisible] = useState(false);
@@ -84,6 +87,15 @@ export default function Profile({ getAllPosts }) {
       <div className="profile_top">
         <div className="profile_container">
           <Cover cover={profile.cover} />
+          <ProfilePictureInfos profile={profile} />
+          <ProfileMenu />
+        </div>
+      </div>
+      <div className="profile_bottom">
+        <div className="profile_container">
+          <div className="bottom_container">
+            <PplYouMayKnow />
+          </div>
         </div>
       </div>
     </div>
