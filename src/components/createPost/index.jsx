@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Feeling, LiveVideo, Photo } from "../../svg";
 import "./style.css";
 
-export default function CreatePost({ setVisible }) {
+export default function CreatePost({ setVisible, profile }) {
   const { user } = useSelector((state) => ({ ...state }));
   return (
     <div className="createPost">
@@ -27,10 +27,17 @@ export default function CreatePost({ setVisible }) {
           <Photo color={"#4bbf67"} />
           Photo / Video
         </div>
-        <div className="createPost_icon hover1">
-          <Feeling color={"#f7b928"} />
-          Feeling / Activity
-        </div>
+        {profile ? (
+          <div className="createPost_icon hover1">
+            <i className="lifeEvent_icon"></i>
+            Life Event
+          </div>
+        ) : (
+          <div className="createPost_icon hover1">
+            <Feeling color={"#f7b928"} />
+            Feeling / Activity
+          </div>
+        )}
       </div>
     </div>
   );

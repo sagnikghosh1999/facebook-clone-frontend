@@ -8,12 +8,12 @@ import ReactsPopup from "./ReactsPopup";
 import CreateComment from "./CreateComment";
 import PostMenu from "./PostMenu";
 
-function Post({ post, user }) {
+function Post({ post, user, profile }) {
   const [visible, setVisible] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [checkSaved, setCheckSaved] = useState();
   return (
-    <div className="post">
+    <div className="post" style={{ width: `${profile && "100%"}` }}>
       <div className="post_header">
         <Link
           to={`/profile/${post.user.username}`}

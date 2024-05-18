@@ -72,8 +72,16 @@ function App() {
           <Route path="/login" element={<Login />} exact />
         </Route>
         <Route element={<LoggedInRoutes />}>
-          <Route path="/profile" element={<Profile />} exact />
-          <Route path="/profile/:username" element={<Profile />} exact />
+          <Route
+            path="/profile"
+            element={<Profile setVisible={setVisible} />}
+            exact
+          />
+          <Route
+            path="/profile/:username"
+            element={<Profile setVisible={setVisible} />}
+            exact
+          />
           <Route path="/activate/:token" element={<Activate />} exact />
           <Route
             path="/"
