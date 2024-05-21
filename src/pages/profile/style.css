@@ -84,7 +84,7 @@
     justify-content: space-between;
     padding: 0 1rem;
     margin-bottom: -2.8rem;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .profile_w_left {
@@ -95,7 +95,7 @@
 
 .profile_w_img {
     position: relative;
-    z-index: 9999;
+    z-index: 10;
 }
 
 .profile_w_bg {

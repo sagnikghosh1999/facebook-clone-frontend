@@ -392,7 +392,7 @@ header {
 
 /*-------User menu----*/
 
-.mmenu {
+.menu {
     padding: 0 0.3rem;
     position: absolute;
     top: 100%;
@@ -405,7 +405,7 @@ header {
     padding: 10px;
 }
 
-.mmenu_header {
+.menu_header {
     display: flex;
     align-items: center;
     padding: 5px;
@@ -413,31 +413,31 @@ header {
     gap: 10px;
 }
 
-.mmenu_header img {
+.menu_header img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.mmenu_col {
+.menu_col {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.mmenu_col span:first-of-type {
+.menu_col span:first-of-type {
     color: var(--color-primary);
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 1px;
 }
 
-.mmenu_col span:last-of-type {
+.menu_col span:last-of-type {
     font-size: 14px;
 }
 
-.mmenu_main {
+.menu_main {
     padding: 10px;
     margin-top: 5px;
     display: flex;
@@ -445,23 +445,23 @@ header {
     gap: 5px;
 }
 
-.mmenu_splitter {
+.menu_splitter {
     width: 100%;
     height: 1px;
     background: var(--bg-third);
     margin-top: 5px;
 }
 
-.mmenu_span1 {
+.menu_span1 {
     font-size: 14px !important;
 }
 
-.mmenu_span2 {
+.menu_span2 {
     font-size: 12px !important;
     color: var(--color-secondary);
 }
 
-.mmenu_item {
+.menu_item {
     position: relative;
     display: flex;
     align-items: center;
@@ -495,7 +495,7 @@ header {
     padding: 10px;
 }
 
-.absolute_wrap .mmenu_item {
+.absolute_wrap .menu_item {
     margin-top: 0;
 }
 
@@ -679,7 +679,7 @@ header {
         display: none;
     }
 
-    .mmenu {
+    .menu {
         width: 290px;
     }
 
