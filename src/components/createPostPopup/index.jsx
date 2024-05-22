@@ -10,6 +10,7 @@ import ImagePreview from "./ImagePreview";
 import { createPost } from "../../functions/post";
 import PostError from "./PostError";
 import { uploadImages } from "../../functions/uploadImages";
+import { useDispatch } from "react-redux";
 
 export default function CreatePostPopup({ user, setVisible }) {
   const [text, setText] = useState("");
@@ -19,6 +20,7 @@ export default function CreatePostPopup({ user, setVisible }) {
   const [images, setImages] = useState([]);
   const [background, setBackground] = useState("");
   const popup = useRef(null);
+  const dispatch = useDispatch();
 
   useClickOutside(popup, () => {
     setVisible(false);
