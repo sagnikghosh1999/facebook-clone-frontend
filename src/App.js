@@ -63,7 +63,7 @@ function App() {
       });
     }
   };
-  console.log(posts);
+
   return (
     <>
       {visible && <CreatePostPopup user={user} setVisible={setVisible} />}

@@ -108,6 +108,8 @@ export default function Profile({ getAllPosts, setVisible }) {
     setScrollHeight(window.pageYOffset);
   };
 
+  console.log(profile);
+
   return (
     <div className="profile">
       <Header page="profile" />
