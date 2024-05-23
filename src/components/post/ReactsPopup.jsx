@@ -46,7 +46,7 @@ export default function ReactsPopup({ visible, setVisible, reactHandler }) {
             <div
               className="react"
               key={i}
-              //   onClick={() => reactHandler(react.name)}
+              onClick={() => reactHandler(react.name)}
             >
               <img src={react.image} alt="" />
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
@@ -7,11 +7,59 @@ import { Dots, Public } from "../../svg";
 import ReactsPopup from "./ReactsPopup";
 import CreateComment from "./CreateComment";
 import PostMenu from "./PostMenu";
+import { getReacts, reactPost } from "../../functions/post";
 
 function Post({ post, user, profile }) {
   const [visible, setVisible] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [reacts, setReacts] = useState();
+  const [check, setCheck] = useState();
+  const [total, setTotal] = useState(0);
+  const [count, setCount] = useState(1);
   const [checkSaved, setCheckSaved] = useState();
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    getPostReacts();
+  }, [post]);
+  useEffect(() => {
+    setComments(post?.comments);
+  }, [post]);
+
+  const getPostReacts = async () => {
+    const res = await getReacts(post._id, user.token);
+    setReacts(res.reacts);
+    setCheck(res.check);
+    setTotal(res.total);
+    setCheckSaved(res.checkSaved);
+  };
+
+  const reactHandler = async (type) => {
+    reactPost(post._id, type, user.token);
+    if (check === type) {
+      setCheck();
+      let index = reacts.findIndex((x) => x.react === check);
+      if (index !== -1) {
+        setReacts([...reacts, (reacts[index].count = --reacts[index].count)]);
+        setTotal((prev) => --prev);
+      }
+    } else {
+      setCheck(type);
+      let index = reacts.findIndex((x) => x.react === type);
+      let index1 = reacts.findIndex((x) => x.react === check);
+      if (index !== -1) {
+        setReacts([...reacts, (reacts[index].count = ++reacts[index].count)]);
+        setTotal((prev) => ++prev);
+        console.log(reacts);
+      }
+      if (index1 !== -1) {
+        setReacts([...reacts, (reacts[index1].count = --reacts[index1].count)]);
+        setTotal((prev) => --prev);
+        console.log(reacts);
+      }
+    }
+  };
+
   return (
     <div className="post" style={{ width: `${profile && "100%"}` }}>
       <div className="post_header">
@@ -103,7 +151,7 @@ function Post({ post, user, profile }) {
       <div className="post_infos">
         <div className="reacts_count">
           <div className="reacts_count_imgs">
-            {/* {reacts &&
+            {reacts &&
               reacts
                 .sort((a, b) => {
                   return b.count - a.count;
@@ -118,9 +166,9 @@ function Post({ post, user, profile }) {
                         key={i}
                       />
                     )
-                )} */}
+                )}
           </div>
-          <div className="reacts_count_num">{/* {total > 0 && total} */}</div>
+          <div className="reacts_count_num">{total > 0 && total}</div>
         </div>
         <div className="to_right">
           <div className="comments_count">
@@ -134,7 +182,7 @@ function Post({ post, user, profile }) {
         <ReactsPopup
           visible={visible}
           setVisible={setVisible}
-          // reactHandler={reactHandler}
+          reactHandler={reactHandler}
         />
         <div
           className="post_action hover1"
@@ -148,9 +196,9 @@ function Post({ post, user, profile }) {
               setVisible(false);
             }, 500);
           }}
-          // onClick={() => reactHandler(check ? check : "like")}
+          onClick={() => reactHandler(check ? check : "like")}
         >
-          {/* {check ? (
+          {check ? (
             <img
               src={`../../../reacts/${check}.svg`}
               alt=""
@@ -183,9 +231,9 @@ function Post({ post, user, profile }) {
             }}
           >
             {check ? check : "Like"}
-          </span> */}
-          <i className="like_icon"></i>
-          <span>like</span>
+          </span>
+          {/* <i className="like_icon"></i>
+          <span>like</span> */}
         </div>
         <div className="post_action hover1">
           <i className="comment_icon"></i>
