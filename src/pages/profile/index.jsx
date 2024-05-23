@@ -135,12 +135,9 @@ export default function Profile({ getAllPosts, setVisible }) {
             <PplYouMayKnow />
             <div
               className={`profile_grid ${
-                check && scrollHeight >= height && leftHeight > 800
+                check && scrollHeight >= height
                   ? "scrollFixed showLess"
-                  : check &&
-                    scrollHeight >= height &&
-                    leftHeight < 800 &&
-                    "scrollFixed showMore"
+                  : check && scrollHeight >= height && "scrollFixed showMore"
               }`}
             >
               <div className="profile_left" ref={leftSide}>

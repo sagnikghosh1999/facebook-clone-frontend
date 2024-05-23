@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
@@ -8,6 +8,7 @@ import ReactsPopup from "./ReactsPopup";
 import CreateComment from "./CreateComment";
 import PostMenu from "./PostMenu";
 import { getReacts, reactPost } from "../../functions/post";
+import Comment from "./Comment";
 
 function Post({ post, user, profile }) {
   const [visible, setVisible] = useState(false);
@@ -59,6 +60,11 @@ function Post({ post, user, profile }) {
       }
     }
   };
+
+  const showMore = () => {
+    setCount((prev) => prev + 3);
+  };
+  const postRef = useRef(null);
 
   return (
     <div className="post" style={{ width: `${profile && "100%"}` }}>
@@ -172,8 +178,8 @@ function Post({ post, user, profile }) {
         </div>
         <div className="to_right">
           <div className="comments_count">
-            {/* {comments.length}  */}
-            13 comments
+            {comments.length}
+            comments
           </div>
           <div className="share_count">0 share</div>
         </div>
@@ -249,10 +255,10 @@ function Post({ post, user, profile }) {
         <CreateComment
           user={user}
           postId={post._id}
-          // setComments={setComments}
-          // setCount={setCount}
+          setComments={setComments}
+          setCount={setCount}
         />
-        {/* {comments &&
+        {comments &&
           comments
             .sort((a, b) => {
               return new Date(b.commentAt) - new Date(a.commentAt);
@@ -263,7 +269,7 @@ function Post({ post, user, profile }) {
           <div className="view_comments" onClick={() => showMore()}>
             View more comments
           </div>
-        )} */}
+        )}
       </div>
       {showMenu && (
         <PostMenu
@@ -276,7 +282,7 @@ function Post({ post, user, profile }) {
           checkSaved={checkSaved}
           setCheckSaved={setCheckSaved}
           images={post.images}
-          // postRef={postRef}
+          postRef={postRef}
         />
       )}
     </div>
