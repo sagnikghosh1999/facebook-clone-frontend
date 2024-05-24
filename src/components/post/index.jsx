@@ -67,7 +67,11 @@ function Post({ post, user, profile }) {
   const postRef = useRef(null);
 
   return (
-    <div className="post" style={{ width: `${profile && "100%"}` }}>
+    <div
+      className="post"
+      style={{ width: `${profile && "100%"}` }}
+      ref={postRef}
+    >
       <div className="post_header">
         <Link
           to={`/profile/${post.user.username}`}
@@ -177,10 +181,7 @@ function Post({ post, user, profile }) {
           <div className="reacts_count_num">{total > 0 && total}</div>
         </div>
         <div className="to_right">
-          <div className="comments_count">
-            {comments.length}
-            comments
-          </div>
+          <div className="comments_count">{comments.length} comments</div>
           <div className="share_count">0 share</div>
         </div>
       </div>

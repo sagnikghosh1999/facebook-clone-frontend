@@ -9,16 +9,16 @@ import "./style.css";
 import Post from "../../components/post";
 import { useEffect, useRef, useState } from "react";
 
-export default function Home({ setVisible, posts }) {
+export default function Home({ setVisible, posts, loading, getAllPosts }) {
   const { user } = useSelector((user) => ({ ...user }));
   const middle = useRef(null);
   const [height, setHeight] = useState();
   useEffect(() => {
     setHeight(middle?.current?.clientHeight);
-  }, [height]);
+  }, [height, loading]);
   return (
     <div className="home" style={{ height: `${height + 150}px` }}>
-      <Header />
+      <Header page="home" getAllPosts={getAllPosts} />
       <LeftHome />
       <div className="home_middle" ref={middle}>
         <Stories />

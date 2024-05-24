@@ -10,9 +10,14 @@ import ImagePreview from "./ImagePreview";
 import { createPost } from "../../functions/post";
 import PostError from "./PostError";
 import { uploadImages } from "../../functions/uploadImages";
-import { useDispatch } from "react-redux";
 
-export default function CreatePostPopup({ user, setVisible }) {
+export default function CreatePostPopup({
+  user,
+  setVisible,
+  posts,
+  dispatch,
+  profile,
+}) {
   const [text, setText] = useState("");
   const [showPrev, setShowPrev] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,7 +25,6 @@ export default function CreatePostPopup({ user, setVisible }) {
   const [images, setImages] = useState([]);
   const [background, setBackground] = useState("");
   const popup = useRef(null);
-  const dispatch = useDispatch();
 
   useClickOutside(popup, () => {
     setVisible(false);
@@ -39,10 +43,10 @@ export default function CreatePostPopup({ user, setVisible }) {
       );
       setLoading(false);
       if (response.status === "ok") {
-        // dispatch({
-        //   type: profile ? "PROFILE_POSTS" : "POSTS_SUCCESS",
-        //   payload: [response.data, ...posts],
-        // });
+        dispatch({
+          type: profile ? "PROFILE_POSTS" : "POSTS_SUCCESS",
+          payload: [response.data, ...posts],
+        });
         setBackground("");
         setText("");
         setVisible(false);
@@ -72,10 +76,10 @@ export default function CreatePostPopup({ user, setVisible }) {
       );
       setLoading(false);
       if (res.status === "ok") {
-        // dispatch({
-        //   type: profile ? "PROFILE_POSTS" : "POSTS_SUCCESS",
-        //   payload: [res.data, ...posts],
-        // });
+        dispatch({
+          type: profile ? "PROFILE_POSTS" : "POSTS_SUCCESS",
+          payload: [res.data, ...posts],
+        });
         setText("");
         setImages("");
         setVisible(false);
@@ -94,10 +98,10 @@ export default function CreatePostPopup({ user, setVisible }) {
       );
       setLoading(false);
       if (response.status === "ok") {
-        // dispatch({
-        //   type: profile ? "PROFILE_POSTS" : "POSTS_SUCCESS",
-        //   payload: [response.data, ...posts],
-        // });
+        dispatch({
+          type: profile ? "PROFILE_POSTS" : "POSTS_SUCCESS",
+          payload: [response.data, ...posts],
+        });
         setBackground("");
         setText("");
         setVisible(false);

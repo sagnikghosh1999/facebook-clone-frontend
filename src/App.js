@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 import Home from "./pages/home";
 import Activate from "./pages/home/Activate";
@@ -10,26 +11,13 @@ import Reset from "./pages/reset";
 import LoggedInRoutes from "./routes/LoggedInRoutes";
 import NotLoggedInRoutes from "./routes/NotLoggedInRoutes";
 import CreatePostPopup from "./components/createPostPopup";
-import axios from "axios";
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "POSTS_REQUEST":
-      return { ...state, loading: true, error: "" };
-    case "POSTS_SUCCESS":
-      return { ...state, loading: false, posts: action.payload, error: "" };
-    case "POSTS_ERROR":
-      return { ...state, loading: false, error: action.payload };
-    default:
-      return state;
-  }
-}
+import { postsReducer } from "./functions/reducers";
 
 function App() {
   const [visible, setVisible] = useState(false);
   const { user } = useSelector((state) => ({ ...state }));
 
-  const [{ loading, error, posts }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, posts }, dispatch] = useReducer(postsReducer, {
     loading: false,
     posts: [],
     error: "",
@@ -66,7 +54,14 @@ function App() {
 
   return (
     <>
-      {visible && <CreatePostPopup user={user} setVisible={setVisible} />}
+      {visible && (
+        <CreatePostPopup
+          user={user}
+          setVisible={setVisible}
+          posts={posts}
+          dispatch={dispatch}
+        />
+      )}
       <Routes>
         <Route element={<NotLoggedInRoutes />}>
           <Route path="/login" element={<Login />} exact />
@@ -74,18 +69,29 @@ function App() {
         <Route element={<LoggedInRoutes />}>
           <Route
             path="/profile"
-            element={<Profile setVisible={setVisible} />}
+            element={
+              <Profile setVisible={setVisible} getAllPosts={getAllPosts} />
+            }
             exact
           />
           <Route
             path="/profile/:username"
-            element={<Profile setVisible={setVisible} />}
+            element={
+              <Profile setVisible={setVisible} getAllPosts={getAllPosts} />
+            }
             exact
           />
           <Route path="/activate/:token" element={<Activate />} exact />
           <Route
             path="/"
-            element={<Home setVisible={setVisible} posts={posts} />}
+            element={
+              <Home
+                setVisible={setVisible}
+                posts={posts}
+                loading={loading}
+                getAllPosts={getAllPosts}
+              />
+            }
             exact
           />
         </Route>
