@@ -36,7 +36,7 @@
     font-size: 21px;
 }
 
-.friends_left .mmenu_item {
+.friends_left .menu_item {
     cursor: pointer;
 }
 
@@ -115,7 +115,7 @@
         display: none;
     }
 
-    .friends_left .mmenu_item span {
+    .friends_left .menu_item span {
         display: none;
     }
 }

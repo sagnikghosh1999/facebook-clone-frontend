@@ -44,16 +44,26 @@ export default function UserMenu({ user }) {
             </div>
           </div>
           <div className="menu_splitter"></div>
-          <div className="menu_item hover3" onClick={() => setVisible(1)}>
+          <div
+            className="menu_item hover3"
+            onClick={() => {
+              setVisible(1);
+            }}
+          >
             <div className="small_circle">
               <i className="settings_filled_icon"></i>
             </div>
-            <span>Settings & Privacy</span>
+            <span>Settings & privacy</span>
             <div className="rArrow">
               <i className="right_icon"></i>
             </div>
           </div>
-          <div className="menu_item hover3" onClick={() => setVisible(2)}>
+          <div
+            className="menu_item hover3"
+            onClick={() => {
+              setVisible(2);
+            }}
+          >
             <div className="small_circle">
               <i className="help_filled_icon"></i>
             </div>
@@ -62,11 +72,16 @@ export default function UserMenu({ user }) {
               <i className="right_icon"></i>
             </div>
           </div>
-          <div className="menu_item hover3" onClick={() => setVisible(3)}>
+          <div
+            className="menu_item hover3"
+            onClick={() => {
+              setVisible(3);
+            }}
+          >
             <div className="small_circle">
               <i className="dark_filled_icon"></i>
             </div>
-            <span>Display & Accessibilities</span>
+            <span>Display & Accessibility</span>
             <div className="rArrow">
               <i className="right_icon"></i>
             </div>
