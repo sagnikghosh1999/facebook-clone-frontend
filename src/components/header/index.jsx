@@ -5,6 +5,7 @@ import "./style.css";
 import {
   ArrowDown,
   Friends,
+  FriendsActive,
   Gaming,
   Home,
   HomeActive,
@@ -78,8 +79,11 @@ export default function Header({ page, getAllPosts }) {
         >
           {page === "home" ? <HomeActive /> : <Home color={color} />}
         </Link>
-        <Link to="/" className="middle_icon hover1">
-          <Friends color={color} />
+        <Link
+          to="/friends"
+          className={`middle_icon ${page === "friends" ? "active" : "hover1"}`}
+        >
+          {page === "friends" ? <FriendsActive /> : <Friends color={color} />}
         </Link>
         <Link to="/" className="middle_icon hover1">
           <Watch color={color} />
@@ -105,8 +109,9 @@ export default function Header({ page, getAllPosts }) {
         <div
           className={`circle_icon hover1 ${showAllMenu && "active_header"} `}
           ref={allmenu}
+          onClick={() => setShowAllMenu((prev) => !prev)}
         >
-          <div onClick={() => setShowAllMenu((prev) => !prev)}>
+          <div>
             <div style={{ transform: "translateY(2px)" }}>
               <Menu />
             </div>
@@ -123,8 +128,9 @@ export default function Header({ page, getAllPosts }) {
         <div
           className={`circle_icon hover1 ${showUserMenu && "active_header"} `}
           ref={usermenu}
+          onClick={() => setShowUserMenu((prev) => !prev)}
         >
-          <div onClick={() => setShowUserMenu((prev) => !prev)}>
+          <div>
             <div style={{ transform: "translateY(2px)" }}>
               <ArrowDown />
             </div>

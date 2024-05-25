@@ -12,6 +12,7 @@ import LoggedInRoutes from "./routes/LoggedInRoutes";
 import NotLoggedInRoutes from "./routes/NotLoggedInRoutes";
 import CreatePostPopup from "./components/createPostPopup";
 import { postsReducer } from "./functions/reducers";
+import Friends from "./pages/friends";
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -53,7 +54,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="dark">
       {visible && (
         <CreatePostPopup
           user={user}
@@ -81,6 +82,20 @@ function App() {
             }
             exact
           />
+          <Route
+            path="/friends"
+            element={
+              <Friends setVisible={setVisible} getAllPosts={getAllPosts} />
+            }
+            exact
+          />
+          <Route
+            path="/friends/:type"
+            element={
+              <Friends setVisible={setVisible} getAllPosts={getAllPosts} />
+            }
+            exact
+          />
           <Route path="/activate/:token" element={<Activate />} exact />
           <Route
             path="/"
@@ -97,7 +112,7 @@ function App() {
         </Route>
         <Route path="/reset" element={<Reset />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
