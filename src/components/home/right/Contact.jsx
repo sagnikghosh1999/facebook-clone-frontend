@@ -1,12 +1,14 @@
-export default function Contact({ user }) {
+import { Link } from "react-router-dom";
+
+export default function Contact({ friend }) {
   return (
-    <div className="contact hover3">
+    <Link to={`/profile/${friend.username}`} className="contact hover3">
       <div className="contact_img">
-        <img src={user?.picture} alt={user?.first_name} />
+        <img src={friend?.picture} alt={friend?.first_name} />
       </div>
       <span>
-        {user?.first_name} {user?.last_name}
+        {friend?.first_name} {friend?.last_name}
       </span>
-    </div>
+    </Link>
   );
 }

@@ -37,7 +37,7 @@ export default function Home({ setVisible, posts, loading, getAllPosts }) {
           </div>
         )}
       </div>
-      <RightHome />
+      <RightHome friends={user.friends} />
     </div>
   );
 }

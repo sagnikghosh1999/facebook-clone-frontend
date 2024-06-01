@@ -76,3 +76,27 @@
 .contact span {
     transform: translateY(-5px);
 }
+
+.create_group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.create_group_icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-third);
+    cursor: pointer;
+
+}

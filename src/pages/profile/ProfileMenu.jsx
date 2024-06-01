@@ -28,7 +28,7 @@ export default function ProfileMenu({ showSuggestion, setShowSuggestion }) {
         </Link>
         <div
           className={`suggestion_btn hover1 ${
-            showSuggestion && "active_show_suggestion"
+            showSuggestion ? "active_show_suggestion" : ""
           } `}
           onClick={() => {
             setShowSuggestion((prev) => !prev);

@@ -1,11 +1,14 @@
+import { useMediaQuery } from "react-responsive";
+import Skeleton from "react-loading-skeleton";
+
 import { ArrowRight, Plus } from "../../../svg";
 import "./style.css";
-
 import { stories } from "../../../data/home";
 import Story from "./Story";
-import { useMediaQuery } from "react-responsive";
+import { useSelector } from "react-redux";
 
 export default function Stories() {
+  const { user } = useSelector((user) => ({ ...user }));
   const query1175 = useMediaQuery({
     query: "(max-width:1175px)",
   });
@@ -33,8 +36,8 @@ export default function Stories() {
     <div className="stories">
       <div className="create_story_card">
         <img
-          src="/images/default_pic.png"
-          alt=""
+          src={user?.picture}
+          alt={user?.username}
           className="create_story_img"
         />
         <div className="plus_story">
@@ -42,9 +45,33 @@ export default function Stories() {
         </div>
         <div className="story_create_text">Create Story</div>
       </div>
-      {stories.slice(0, max).map((story, i) => (
-        <Story story={story} key={i} />
-      ))}
+      {false ? (
+        <>
+          {stories.slice(0, max).map((story, i) => (
+            <div className="story">
+              <Skeleton
+                height="190px"
+                containerClassName="avatar-skeleton"
+                style={{ borderRadius: "10px" }}
+              />
+              <div className="story_profile_pic">
+                <Skeleton
+                  circle
+                  height="40px"
+                  width="40px"
+                  containerClassName="avatar-skeleton"
+                />
+              </div>
+            </div>
+          ))}
+        </>
+      ) : (
+        <>
+          {stories.slice(0, max).map((story, i) => (
+            <Story story={story} key={i} />
+          ))}
+        </>
+      )}
       <div className="white_circle hover2">
         <ArrowRight color={"#65676b"} />
       </div>
