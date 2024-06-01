@@ -11,7 +11,6 @@ export default function SendEmail({
   loading,
   setLoading,
 }) {
-  // console.log(userInfos);
   const sendEmail = async () => {
     try {
       setLoading(true);

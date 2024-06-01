@@ -109,7 +109,6 @@ export default function CreatePostPopup({
         setError(response);
       }
     } else {
-      console.log("nothing");
     }
   };
 

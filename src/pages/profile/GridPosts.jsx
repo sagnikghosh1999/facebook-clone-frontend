@@ -1,4 +1,4 @@
-export default function GridPosts() {
+export default function GridPosts({ visitor }) {
   return (
     <div className="createPost">
       <div
@@ -9,11 +9,14 @@ export default function GridPosts() {
         <div className="flex">
           <div className="gray_btn">
             <i className="equalize_icon"></i>
+            Filters
           </div>
-          <div className="gray_btn">
-            <i className="manage_icon"></i>
-            Manage Posts
-          </div>
+          {!visitor && (
+            <div className="gray_btn">
+              <i className="manage_icon"></i>
+              Manage Posts
+            </div>
+          )}
         </div>
       </div>
       <div className="create_splitter"></div>

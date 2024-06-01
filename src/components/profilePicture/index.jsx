@@ -12,7 +12,6 @@ export default function ProfilePicture({ setShow, pRef, photos }) {
   const [image, setImage] = useState("");
 
   const { user } = useSelector((state) => ({ ...state }));
-  console.log(photos);
 
   // useOnClickOutside(popup, () => setShow(false));
   const handleImage = (e) => {

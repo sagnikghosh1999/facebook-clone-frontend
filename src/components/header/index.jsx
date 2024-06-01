@@ -23,7 +23,7 @@ import AllMenu from "./AllMenu";
 import useClickOutside from "../../helpers/clickOutside";
 import UserMenu from "./UserMenu";
 
-export default function Header({ page, getAllPosts }) {
+export default function Header({ page, getAllPosts, visitor }) {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
   const [showSearchMenu, setShowSearchMenu] = useState(false);
@@ -96,7 +96,7 @@ export default function Header({ page, getAllPosts }) {
         <Link
           to="/profile"
           className={`profile_link hover1 ${
-            page === "profile" ? "active_link" : ""
+            page === "profile" && !visitor ? "active_link" : ""
           }`}
         >
           <img src={user?.picture} alt="" />

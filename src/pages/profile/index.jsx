@@ -3,7 +3,7 @@ import { useEffect, useReducer, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 
 import { profileReducer } from "../../functions/reducers";
 import Header from "../../components/header";
@@ -75,9 +75,7 @@ export default function Profile({ getAllPosts }) {
             }
           );
           setPhotos(images.data);
-        } catch (error) {
-          console.log(error);
-        }
+        } catch (error) {}
         dispatch({
           type: "PROFILE_SUCCESS",
           payload: data,
@@ -95,6 +93,7 @@ export default function Profile({ getAllPosts }) {
   const leftSide = useRef(null);
   const [height, setHeight] = useState();
   const [leftHeight, setLeftHeight] = useState();
+  const [showSuggestion, setShowSuggestion] = useState(false);
   const [scrollHeight, setScrollHeight] = useState();
   useEffect(() => {
     setHeight(profileTop.current.clientHeight + 300);
@@ -111,8 +110,6 @@ export default function Profile({ getAllPosts }) {
     setScrollHeight(window.pageYOffset);
   };
 
-  console.log(profile);
-
   return (
     <div className="profile">
       {visible && (
@@ -124,7 +121,7 @@ export default function Profile({ getAllPosts }) {
           profile
         />
       )}
-      <Header page="profile" getAllPosts={getAllPosts} />
+      <Header page="profile" getAllPosts={getAllPosts} visitor={visitor} />
       <div className="profile_top" ref={profileTop}>
         <div className="profile_container">
           {loading ? (
@@ -177,6 +174,7 @@ export default function Profile({ getAllPosts }) {
                       {Array.from(new Array(6), (val, i) => i + 1).map(
                         (id, i) => (
                           <Skeleton
+                            key={i}
                             circle
                             height="32px"
                             width="32px"
@@ -228,13 +226,16 @@ export default function Profile({ getAllPosts }) {
             </>
           )}
 
-          <ProfileMenu />
+          <ProfileMenu
+            setShowSuggestion={setShowSuggestion}
+            showSuggestion={showSuggestion}
+          />
         </div>
       </div>
       <div className="profile_bottom">
         <div className="profile_container">
           <div className="bottom_container">
-            <PplYouMayKnow />
+            {showSuggestion && <PplYouMayKnow />}
             <div
               className={`profile_grid ${
                 check && scrollHeight >= height
@@ -309,7 +310,7 @@ export default function Profile({ getAllPosts }) {
 
               <div className="profile_right">
                 <CreatePost user={user} profile setVisible={setVisible} />
-                <GridPosts />
+                <GridPosts visitor={visitor} />
                 {loading ? (
                   <div className="sekelton_loader">
                     <HashLoader color="#1876f2" />

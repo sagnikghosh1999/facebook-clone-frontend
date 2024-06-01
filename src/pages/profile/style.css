@@ -181,10 +181,11 @@
     border-radius: 0 !important;
 }
 
-.p10_dots {
-    background: var(--bg-third);
+.suggestion_btn {
+    background: var(--bg-primary);
     position: absolute;
     right: 0;
+    z-index: 9999;
     top: 10px;
     border-radius: 5px;
     display: grid;
@@ -192,11 +193,20 @@
     padding: 8px 14px;
 }
 
-.p10_dots svg {
+.active_show_suggestion {
+    background: var(--bg-third);
+}
+
+.suggestion_btn svg {
     width: 16px;
     height: 16px;
     margin-top: 2px;
     margin-left: 2px;
+}
+
+.suggestion_btn:hover {
+    cursor: pointer;
+    background: var(--bg-forth);
 }
 
 /*------ppl u may know------*/

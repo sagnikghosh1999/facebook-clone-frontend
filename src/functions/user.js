@@ -83,7 +83,6 @@ export const follow = async (id, token) => {
     );
     return "ok";
   } catch (error) {
-    console.log(error.response.data.message);
     return error.response.data.message;
   }
 };

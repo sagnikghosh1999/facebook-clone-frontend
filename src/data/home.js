@@ -113,22 +113,22 @@ export const left = [
 export const stories = [
   {
     profile_picture: "../../stories/profile1.jpg",
-    profile_name: "Elon Musk",
+    profile_name: "Super Man",
     image: "../../stories/1.jpg",
   },
   {
     profile_picture: "../../stories/profile2.jpg",
-    profile_name: "South park",
+    profile_name: "Bat Man",
     image: "../../stories/2.png",
   },
   {
     profile_picture: "../../stories/profile3.png",
-    profile_name: "The Sopranos",
+    profile_name: "The Flash",
     image: "../../stories/3.jpg",
   },
   {
-    profile_picture: "../../stories/profile4.jfif",
-    profile_name: "Football World",
+    profile_picture: "../../stories/profile4.jpg",
+    profile_name: "Wonder Woman",
     image: "../../stories/4.jpg",
   },
   {

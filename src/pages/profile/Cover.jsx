@@ -48,9 +48,7 @@ export default function Cover({ cover, visitor, photos }) {
         } else {
           return img;
         }
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     },
     [croppedAreaPixels]
   );

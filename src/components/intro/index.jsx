@@ -39,7 +39,6 @@ export default function Intro({ detailss, visitor, setOthername }) {
 
   const updateDetails = async () => {
     try {
-      console.log("sent");
       const { data } = await axios.put(
         `${process.env.REACT_APP_BACKEND_URL}/updatedetails`,
         {
@@ -54,9 +53,7 @@ export default function Intro({ detailss, visitor, setOthername }) {
       setShowBio(false);
       setDetails(data);
       setOthername(data.otherName);
-    } catch (error) {
-      console.log(error.response.data.message);
-    }
+    } catch (error) {}
   };
 
   return (
