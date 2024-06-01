@@ -6,6 +6,7 @@ import "./styles/icons/icons.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
+import "react-loading-skeleton/dist/skeleton.css";
 
 //creating redux store --------
 import { configureStore } from "@reduxjs/toolkit";
