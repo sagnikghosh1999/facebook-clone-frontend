@@ -13,6 +13,7 @@ import NotLoggedInRoutes from "./routes/NotLoggedInRoutes";
 import CreatePostPopup from "./components/createPostPopup";
 import { postsReducer } from "./functions/reducers";
 import Friends from "./pages/friends";
+import CreateStory from "./pages/createStory";
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -26,7 +27,7 @@ function App() {
 
   useEffect(() => {
     getAllPosts();
-  }, []);
+  }, [user]);
 
   const getAllPosts = async () => {
     try {
@@ -97,6 +98,7 @@ function App() {
             exact
           />
           <Route path="/activate/:token" element={<Activate />} exact />
+          <Route path="/stories/create" element={<CreateStory />} exact />
           <Route
             path="/"
             element={

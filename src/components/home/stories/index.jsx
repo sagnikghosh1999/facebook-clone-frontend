@@ -6,6 +6,7 @@ import "./style.css";
 import { stories } from "../../../data/home";
 import Story from "./Story";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Stories() {
   const { user } = useSelector((user) => ({ ...user }));
@@ -34,7 +35,7 @@ export default function Stories() {
 
   return (
     <div className="stories">
-      <div className="create_story_card">
+      <Link to={"/stories/create"} className="create_story_card">
         <img
           src={user?.picture}
           alt={user?.username}
@@ -44,7 +45,7 @@ export default function Stories() {
           <Plus color={"#fff"} />
         </div>
         <div className="story_create_text">Create Story</div>
-      </div>
+      </Link>
       {false ? (
         <>
           {stories.slice(0, max).map((story, i) => (
