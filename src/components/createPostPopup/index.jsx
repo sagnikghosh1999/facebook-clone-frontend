@@ -145,7 +145,6 @@ export default function CreatePostPopup({
             text={text}
             user={user}
             setText={setText}
-            showPrev={showPrev}
             setBackground={setBackground}
             background={background}
           />

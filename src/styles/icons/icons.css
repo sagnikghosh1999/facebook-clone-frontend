@@ -850,3 +850,33 @@
   background-repeat: no-repeat;
   display: inline-block;
 }
+
+.text_icon {
+  background-image: url(../../../public/icons/icons41.png);
+  background-position: 0 -83px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.photo_story_gradient {
+  background-image: url(../../../public/icons/gradients.png);
+  background-position: 0px 0px;
+  background-size: auto;
+  width: 220px;
+  height: 330px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.text_story_gradient {
+  background-image: url(../../../public/icons/gradients.png);
+  background-position: 0px -331px;
+  background-size: auto;
+  width: 220px;
+  height: 330px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}

@@ -1,0 +1,41 @@
+.storyBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -47%);
+    background: var(--bg-primary);
+    box-shadow: 0 12px 28px 0 var(--shadow-1), 0 2px 4px 0 var(--shadow-2),
+        inset 0 0 0 1px var(--shadow-inset);
+    min-height: 228px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.storyBox .small_circle {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+}
+
+.createStory_btns {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+    width: 500px;
+}
+
+.createStory_btns button {
+    flex: 1;
+}
+
+@media (max-width: 550px) {
+    .storyBox {
+        width: 96%;
+    }
+
+    .createStory_btns {
+        width: 100%;
+    }
+}

@@ -9,10 +9,13 @@
 .create_story_left {
     background: var(--bg-primary);
     box-shadow: 0 12px 12px var(--shadow-1);
-    padding: 10px;
+    padding: 20px 0;
     position: fixed;
     width: 360px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .create_story_right {
@@ -23,13 +26,17 @@
     right: 0;
     width: calc(100vw - 360px);
     min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px 0; */
 }
 
 .create_story_left_header {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 .create_story_left_header h3 {
@@ -40,4 +47,83 @@
     padding-bottom: 10px;
     border-bottom: 1px solid var(--bg-third);
 
+}
+
+.create_story_left .menu_item_user {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.create_story_left .menu_item_user span {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+.create_story_user_img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.create_story_right_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 460px;
+}
+
+.photo_story_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.photo_story_wrap:hover {
+    cursor: pointer;
+    opacity: 0.80;
+}
+
+.photo_story_wrap span {
+    font-weight: 600;
+}
+
+
+.add_circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--bg-secondary);
+    background: var(--bg-secondary);
+    display: grid;
+    place-items: center;
+}
+
+@media (max-width: 890px) {
+    .create_story_left {
+        display: none;
+    }
+
+    .create_story_right {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: calc(100vh - 56px);
+    }
+}
+
+@media (max-width: 530px) {
+    .create_story_right_wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
 }

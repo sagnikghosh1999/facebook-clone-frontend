@@ -89,6 +89,11 @@
     filter: invert(100%);
 }
 
+.dark .photo_story_wrap i {
+    filter: invert(100%);
+
+}
+
 /*----profile---*/
 .dark .active_link:hover {
     background: var(--light-blue-color);
