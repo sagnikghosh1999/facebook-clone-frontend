@@ -11,6 +11,17 @@ export function postsReducer(state, action) {
       };
     case "POSTS_ERROR":
       return { ...state, loading: false, error: action.payload };
+    case "STORIES_REQUEST":
+      return { ...state, loading: true, error: "" };
+    case "STORIES_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        stories: action.payload,
+        error: "",
+      };
+    case "STORIES_ERROR":
+      return { ...state, loading: false, error: action.payload };
 
     default:
       return state;

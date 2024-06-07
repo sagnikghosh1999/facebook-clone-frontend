@@ -5,7 +5,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { createStory } from "../../functions/story";
 import PostError from "../createPostPopup/PostError";
 import useClickOutside from "../../helpers/clickOutside";
-const CreateStoryPopup = ({ setCreateStory, user }) => {
+const CreateStoryPopup = ({ setCreateStory, user, dispatch, stories }) => {
   const storyPopup = useRef(null);
   const [text, setText] = useState("");
   const [background, setBackground] = useState("");
@@ -22,6 +22,10 @@ const CreateStoryPopup = ({ setCreateStory, user }) => {
       const response = await createStory(background, text, user.id, user.token);
       setLoading(false);
       if (response.status === "ok") {
+        dispatch({
+          type: "STORIES_SUCCESS",
+          payload: [response.data, ...stories],
+        });
         setBackground("");
         setText("");
         setCreateStory(false);

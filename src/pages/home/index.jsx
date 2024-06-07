@@ -9,8 +9,15 @@ import "./style.css";
 import Post from "../../components/post";
 import { useEffect, useRef, useState } from "react";
 import { HashLoader } from "react-spinners";
+import { stories } from "../../data/home";
 
-export default function Home({ setVisible, posts, loading, getAllPosts }) {
+export default function Home({
+  setVisible,
+  posts,
+  storiess,
+  loading,
+  getAllPosts,
+}) {
   const { user } = useSelector((user) => ({ ...user }));
   const middle = useRef(null);
   const [height, setHeight] = useState();
@@ -22,7 +29,7 @@ export default function Home({ setVisible, posts, loading, getAllPosts }) {
       <Header page="home" getAllPosts={getAllPosts} />
       <LeftHome />
       <div className="home_middle" ref={middle}>
-        <Stories />
+        <Stories Storiess={storiess} />
         {user.verified === false && <SendVerification />}
         <CreatePost setVisible={setVisible} />
         {loading ? (

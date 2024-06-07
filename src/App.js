@@ -19,14 +19,19 @@ function App() {
   const [visible, setVisible] = useState(false);
   const { user, darkTheme } = useSelector((state) => ({ ...state }));
 
-  const [{ loading, error, posts }, dispatch] = useReducer(postsReducer, {
-    loading: false,
-    posts: [],
-    error: "",
-  });
+  const [{ loading, error, posts, stories }, dispatch] = useReducer(
+    postsReducer,
+    {
+      loading: false,
+      posts: [],
+      stories: [],
+      error: "",
+    }
+  );
 
   useEffect(() => {
     getAllPosts();
+    getAllStories();
   }, [user]);
 
   const getAllPosts = async () => {
@@ -54,6 +59,31 @@ function App() {
     }
   };
 
+  const getAllStories = async () => {
+    try {
+      dispatch({
+        type: "STORIES_REQUEST",
+      });
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/getallstories`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      dispatch({
+        type: "STORIES_SUCCESS",
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: "STORIES_ERROR",
+        payload: error.response.data.message,
+      });
+    }
+  };
+  console.log(stories);
   return (
     <div className={darkTheme && "dark"}>
       {visible && (
@@ -98,7 +128,11 @@ function App() {
             exact
           />
           <Route path="/activate/:token" element={<Activate />} exact />
-          <Route path="/stories/create" element={<CreateStory />} exact />
+          <Route
+            path="/stories/create"
+            element={<CreateStory stories={stories} dispatch={dispatch} />}
+            exact
+          />
           <Route
             path="/"
             element={
@@ -106,6 +140,7 @@ function App() {
                 setVisible={setVisible}
                 posts={posts}
                 loading={loading}
+                storiess={stories}
                 getAllPosts={getAllPosts}
               />
             }

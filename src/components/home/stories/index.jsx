@@ -8,7 +8,8 @@ import Story from "./Story";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default function Stories() {
+export default function Stories(storiess) {
+  console.log(storiess);
   const { user } = useSelector((user) => ({ ...user }));
   const query1175 = useMediaQuery({
     query: "(max-width:1175px)",

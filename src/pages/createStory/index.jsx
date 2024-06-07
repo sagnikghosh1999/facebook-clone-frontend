@@ -5,13 +5,18 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CreateStoryPopup from "../../components/createStoryPopup";
 
-const CreateStory = () => {
+const CreateStory = ({ dispatch, stories }) => {
   const [createStory, setCreateStory] = useState(false);
   const { user } = useSelector((state) => ({ ...state }));
   return (
     <>
       {createStory && (
-        <CreateStoryPopup setCreateStory={setCreateStory} user={user} />
+        <CreateStoryPopup
+          setCreateStory={setCreateStory}
+          user={user}
+          stories={stories}
+          dispatch={dispatch}
+        />
       )}
       <Header />
       <div className="create_story">
