@@ -29,7 +29,7 @@ export default function CreatePost({ setVisible, profile }) {
         </div>
         {profile ? (
           <div className="createPost_icon hover1">
-            <i className="text_icon"></i>
+            <i className="lifeEvent_icon"></i>
             Life Event
           </div>
         ) : (
