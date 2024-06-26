@@ -3,14 +3,51 @@ import Skeleton from "react-loading-skeleton";
 
 import { ArrowRight, Plus } from "../../../svg";
 import "./style.css";
-import { stories } from "../../../data/home";
 import Story from "./Story";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useCallback, useEffect, useReducer } from "react";
+import { postsReducer } from "../../../functions/reducers";
+import axios from "axios";
 
-export default function Stories(storiess) {
-  console.log(storiess);
+export default function Stories() {
   const { user } = useSelector((user) => ({ ...user }));
+
+  const [{ loading, stories }, dispatch] = useReducer(postsReducer, {
+    loading: false,
+    stories: [],
+    error: "",
+  });
+
+  const getAllStories = useCallback(async () => {
+    try {
+      dispatch({
+        type: "STORIES_REQUEST",
+      });
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/getallstories`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      dispatch({
+        type: "STORIES_SUCCESS",
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: "STORIES_ERROR",
+        payload: error.response.data.message,
+      });
+    }
+  }, [user]);
+
+  useEffect(() => {
+    getAllStories();
+  }, [getAllStories]);
+
   const query1175 = useMediaQuery({
     query: "(max-width:1175px)",
   });
@@ -47,7 +84,7 @@ export default function Stories(storiess) {
         </div>
         <div className="story_create_text">Create Story</div>
       </Link>
-      {false ? (
+      {loading ? (
         <>
           {stories.slice(0, max).map((story, i) => (
             <div className="story">
@@ -70,13 +107,17 @@ export default function Stories(storiess) {
       ) : (
         <>
           {stories.slice(0, max).map((story, i) => (
-            <Story story={story} key={i} />
+            <Story story={story} key={i} userId={user.id} />
           ))}
         </>
       )}
-      <div className="white_circle hover2">
-        <ArrowRight color={"#65676b"} />
-      </div>
+      {stories.length > max ? (
+        <div className="white_circle hover2">
+          <ArrowRight color={"#65676b"} />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useCallback, useEffect, useReducer, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -19,22 +19,14 @@ function App() {
   const [visible, setVisible] = useState(false);
   const { user, darkTheme } = useSelector((state) => ({ ...state }));
 
-  const [{ loading, error, posts, stories }, dispatch] = useReducer(
-    postsReducer,
-    {
-      loading: false,
-      posts: [],
-      stories: [],
-      error: "",
-    }
-  );
+  const [{ loading, posts, stories }, dispatch] = useReducer(postsReducer, {
+    loading: false,
+    posts: [],
+    stories: [],
+    error: "",
+  });
 
-  useEffect(() => {
-    getAllPosts();
-    getAllStories();
-  }, [user]);
-
-  const getAllPosts = async () => {
+  const getAllPosts = useCallback(async () => {
     try {
       dispatch({
         type: "POSTS_REQUEST",
@@ -57,33 +49,12 @@ function App() {
         payload: error.response.data.message,
       });
     }
-  };
+  }, [user]);
 
-  const getAllStories = async () => {
-    try {
-      dispatch({
-        type: "STORIES_REQUEST",
-      });
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/getallstories`,
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
-      dispatch({
-        type: "STORIES_SUCCESS",
-        payload: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: "STORIES_ERROR",
-        payload: error.response.data.message,
-      });
-    }
-  };
-  console.log(stories);
+  useEffect(() => {
+    getAllPosts();
+  }, [getAllPosts]);
+
   return (
     <div className={darkTheme && "dark"}>
       {visible && (
@@ -140,7 +111,6 @@ function App() {
                 setVisible={setVisible}
                 posts={posts}
                 loading={loading}
-                storiess={stories}
                 getAllPosts={getAllPosts}
               />
             }
