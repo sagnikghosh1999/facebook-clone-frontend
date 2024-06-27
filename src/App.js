@@ -51,12 +51,38 @@ function App() {
     }
   }, [user]);
 
+  const getAllStories = useCallback(async () => {
+    try {
+      dispatch({
+        type: "STORIES_REQUEST",
+      });
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/getallstories`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      dispatch({
+        type: "STORIES_SUCCESS",
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: "STORIES_ERROR",
+        payload: error.response.data.message,
+      });
+    }
+  }, [user]);
+
   useEffect(() => {
     getAllPosts();
-  }, [getAllPosts]);
+    getAllStories();
+  }, [getAllPosts, getAllStories]);
 
   return (
-    <div className={darkTheme && "dark"}>
+    <div className={darkTheme ? "dark" : ""}>
       {visible && (
         <CreatePostPopup
           user={user}
@@ -99,17 +125,14 @@ function App() {
             exact
           />
           <Route path="/activate/:token" element={<Activate />} exact />
-          <Route
-            path="/stories/create"
-            element={<CreateStory stories={stories} dispatch={dispatch} />}
-            exact
-          />
+          <Route path="/stories/create" element={<CreateStory />} exact />
           <Route
             path="/"
             element={
               <Home
                 setVisible={setVisible}
                 posts={posts}
+                stories={stories}
                 loading={loading}
                 getAllPosts={getAllPosts}
               />

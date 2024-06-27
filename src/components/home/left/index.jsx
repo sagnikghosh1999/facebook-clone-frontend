@@ -97,7 +97,7 @@ export default function LeftHome() {
         <Link to={"/"}>More </Link>
         <span>. </span>
         <br />
-        Meta © 2023
+        Meta © 2024
       </div>
     </div>
   );

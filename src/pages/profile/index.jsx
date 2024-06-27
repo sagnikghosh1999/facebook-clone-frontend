@@ -290,7 +290,7 @@ export default function Profile({ getAllPosts }) {
                     <Friends friends={profile.friends} />
                   </>
                 )}
-                <div className="relative_fb_copyright">
+                <div className="relative fb_copyright">
                   <Link to="/">Privacy </Link>
                   <span>. </span>
                   <Link to="/">Terms </Link>

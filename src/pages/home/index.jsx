@@ -9,12 +9,11 @@ import "./style.css";
 import Post from "../../components/post";
 import { useEffect, useRef, useState } from "react";
 import { HashLoader } from "react-spinners";
-import { stories } from "../../data/home";
 
 export default function Home({
   setVisible,
   posts,
-  storiess,
+  stories,
   loading,
   getAllPosts,
 }) {
@@ -29,7 +28,7 @@ export default function Home({
       <Header page="home" getAllPosts={getAllPosts} />
       <LeftHome />
       <div className="home_middle" ref={middle}>
-        <Stories Storiess={storiess} />
+        <Stories stories={stories} loading={loading} />
         {user.verified === false && <SendVerification />}
         <CreatePost setVisible={setVisible} />
         {loading ? (

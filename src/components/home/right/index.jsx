@@ -26,7 +26,7 @@ export default function RightHome({ friends }) {
           </div>
         </div>
         <div className="contacts_list">
-          {friends.slice(0, 8).map((friend, i) => (
+          {friends?.slice(0, 8).map((friend, i) => (
             <Contact friend={friend} key={i} />
           ))}
         </div>

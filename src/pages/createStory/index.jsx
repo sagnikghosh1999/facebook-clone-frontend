@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import Header from "../../components/header";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CreateStoryPopup from "../../components/createStoryPopup";
+import { postsReducer } from "../../functions/reducers";
 
-const CreateStory = ({ dispatch, stories }) => {
+const CreateStory = () => {
   const [createStory, setCreateStory] = useState(false);
   const { user } = useSelector((state) => ({ ...state }));
+  // eslint-disable-next-line
+  const [{ loading, stories }, dispatch] = useReducer(postsReducer, {
+    loading: false,
+    stories: [],
+    error: "",
+  });
+
   return (
     <>
       {createStory && (

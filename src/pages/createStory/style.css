@@ -24,7 +24,7 @@
     position: absolute;
     left: 360px;
     right: 0;
-    width: calc(100vw - 360px);
+    width: calc(100vw - 377px);
     min-height: calc(100vh - 56px);
     display: flex;
     align-items: center;

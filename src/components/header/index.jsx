@@ -126,7 +126,9 @@ export default function Header({ page, getAllPosts, visitor }) {
           <div className="right_notification">5</div>
         </div>
         <div
-          className={`circle_icon hover1 ${showUserMenu && "active_header"}`}
+          className={`circle_icon hover1 ${
+            showUserMenu ? "active_header" : ""
+          }`}
           ref={usermenu}
         >
           <div
