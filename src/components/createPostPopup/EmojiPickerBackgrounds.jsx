@@ -32,15 +32,15 @@ export default function EmojiPickerBackgrounds({
   };
 
   const postBackgrounds = [
-    "https://mynextbook.vercel.app/images/postbackgrounds/1.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/2.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/3.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/4.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/5.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/6.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/7.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/8.jpg",
-    "https://mynextbook.vercel.app/images/postbackgrounds/9.jpg",
+    "../../../images/postbackgrounds/1.jpg",
+    "../../../images/postbackgrounds/2.jpg",
+    "../../../images/postbackgrounds/3.jpg",
+    "../../../images/postbackgrounds/4.jpg",
+    "../../../images/postbackgrounds/5.jpg",
+    "../../../images/postbackgrounds/6.jpg",
+    "../../../images/postbackgrounds/7.jpg",
+    "../../../images/postbackgrounds/8.jpg",
+    "../../../images/postbackgrounds/9.jpg",
   ];
 
   const backgroundHanlder = (i) => {
