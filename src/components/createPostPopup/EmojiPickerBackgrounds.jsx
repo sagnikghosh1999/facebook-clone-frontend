@@ -32,19 +32,19 @@ export default function EmojiPickerBackgrounds({
   };
 
   const postBackgrounds = [
-    "../../../images/postbackgrounds/1.jpg",
-    "../../../images/postbackgrounds/2.jpg",
-    "../../../images/postbackgrounds/3.jpg",
-    "../../../images/postbackgrounds/4.jpg",
-    "../../../images/postbackgrounds/5.jpg",
-    "../../../images/postbackgrounds/6.jpg",
-    "../../../images/postbackgrounds/7.jpg",
-    "../../../images/postbackgrounds/8.jpg",
-    "../../../images/postbackgrounds/9.jpg",
+    "/images/postbackgrounds/1.jpg",
+    "/images/postbackgrounds/2.jpg",
+    "/images/postbackgrounds/3.jpg",
+    "/images/postbackgrounds/4.jpg",
+    "/images/postbackgrounds/5.jpg",
+    "/images/postbackgrounds/6.jpg",
+    "/images/postbackgrounds/7.jpg",
+    "/images/postbackgrounds/8.jpg",
+    "/images/postbackgrounds/9.jpg",
   ];
 
   const backgroundHanlder = (i) => {
-    bgRef.current.style.backgroundImage = `url(${postBackgrounds[i]})`;
+    bgRef.current.style.backgroundImage = `url(${process.env.REACT_APP_FRONTEND_URL}${postBackgrounds[i]})`;
     setBackground(postBackgrounds[i]);
     bgRef.current.classList.add("bgHandler");
   };

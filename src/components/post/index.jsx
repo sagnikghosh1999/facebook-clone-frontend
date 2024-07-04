@@ -108,7 +108,9 @@ function Post({ post, user, profile }) {
       {post.background ? (
         <div
           className="post_bg"
-          style={{ backgroundImage: `url(${post.background})` }}
+          style={{
+            backgroundImage: `url(${process.env.REACT_APP_FRONTEND_URL}${post.background})`,
+          }}
         >
           <div className="post_bg_text">{post.text}</div>
         </div>
