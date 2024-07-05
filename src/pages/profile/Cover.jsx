@@ -50,7 +50,7 @@ export default function Cover({ cover, visitor, photos }) {
         }
       } catch (error) {}
     },
-    [croppedAreaPixels]
+    [croppedAreaPixels, coverPicture]
   );
 
   const updateCoverPicture = async () => {

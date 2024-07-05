@@ -183,7 +183,7 @@
     }
 
     .stories {
-        grid-template-columns: repeat(6, 14vw);
+        grid-template-columns: repeat(4, 21vw);
     }
 
     .story,
@@ -224,7 +224,7 @@
     }
 
     .stories {
-        grid-template-columns: repeat(6, 13vw);
+        grid-template-columns: repeat(4, 20.5vw);
         padding-left: 10px;
     }
 

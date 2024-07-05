@@ -18,11 +18,15 @@ export default function Stories({ stories, loading }) {
   const query960 = useMediaQuery({
     query: "(max-width:960px)",
   });
+  const query620 = useMediaQuery({
+    query: "(max-width:620px)",
+  });
   const query885 = useMediaQuery({
     query: "(max-width:885px)",
   });
-
-  const max = query885
+  const max = query620
+    ? 3
+    : query885
     ? 5
     : query960
     ? 4
@@ -30,7 +34,7 @@ export default function Stories({ stories, loading }) {
     ? 5
     : query1175
     ? 4
-    : stories?.length;
+    : 5;
 
   return (
     <div className="stories">
