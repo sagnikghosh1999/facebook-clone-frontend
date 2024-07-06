@@ -7,7 +7,7 @@ import Stories from "../../components/home/stories";
 import SendVerification from "../../components/sendVerification";
 import "./style.css";
 import Post from "../../components/post";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HashLoader } from "react-spinners";
 
 export default function Home({
@@ -19,8 +19,12 @@ export default function Home({
 }) {
   const { user } = useSelector((user) => ({ ...user }));
   const middle = useRef(null);
+  const [height, setHeight] = useState();
+  useEffect(() => {
+    setHeight(middle?.current?.clientHeight);
+  }, [height, loading]);
   return (
-    <div className="home">
+    <div className="home" style={{ height: `${height + 150}px` }}>
       <Header page="home" getAllPosts={getAllPosts} />
       <LeftHome />
       <div className="home_middle" ref={middle}>

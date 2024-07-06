@@ -75,14 +75,14 @@ export default function Friends() {
               }`}
             >
               <div className="small_circle">
-                <i className="friends_requests_icon"></i>
+                <i className="friends_suggestions_icon"></i>
               </div>
               <span>Sent Requests</span>
               <div className="rArrow">
                 <i className="right_icon"></i>
               </div>
             </Link>
-            <div className="menu_item hover3">
+            {/* <div className="menu_item hover3">
               <div className="small_circle">
                 <i className="friends_suggestions_icon"></i>
               </div>
@@ -90,7 +90,7 @@ export default function Friends() {
               <div className="rArrow">
                 <i className="right_icon"></i>
               </div>
-            </div>
+            </div> */}
             <Link
               to="/friends/all"
               className={`menu_item hover3 ${
@@ -137,7 +137,9 @@ export default function Friends() {
                 )}
               </div>
               <div className="flex_wrap">
-                {data.requests &&
+                {loading ? (
+                  "loading..."
+                ) : data?.requests?.length ? (
                   data.requests.map((user) => (
                     <Card
                       userr={user}
@@ -145,7 +147,12 @@ export default function Friends() {
                       type="request"
                       getData={getData}
                     />
-                  ))}
+                  ))
+                ) : (
+                  <div className="text_no_friend">
+                    You Have no pending Friend Requests!
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -160,7 +167,9 @@ export default function Friends() {
                 )}
               </div>
               <div className="flex_wrap">
-                {data.sentRequests &&
+                {loading ? (
+                  "Loading...."
+                ) : data?.sentRequests?.length ? (
                   data.sentRequests.map((user) => (
                     <Card
                       userr={user}
@@ -168,7 +177,12 @@ export default function Friends() {
                       type="sent"
                       getData={getData}
                     />
-                  ))}
+                  ))
+                ) : (
+                  <div className="text_no_friend">
+                    You have not sent any Friend Requests!
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -183,7 +197,9 @@ export default function Friends() {
                 )}
               </div>
               <div className="flex_wrap">
-                {data.friends &&
+                {loading ? (
+                  "loading..."
+                ) : data?.friends?.length ? (
                   data.friends.map((user) => (
                     <Card
                       userr={user}
@@ -191,7 +207,10 @@ export default function Friends() {
                       type="friends"
                       getData={getData}
                     />
-                  ))}
+                  ))
+                ) : (
+                  <div className="text_no_friend">No Friends</div>
+                )}
               </div>
             </div>
           )}

@@ -5,7 +5,7 @@ export default function DisplayAccessibility({ setVisible }) {
   const dispatch = useDispatch();
   const { darkTheme } = useSelector((state) => ({ ...state }));
   return (
-    <div className="absolute_wrap">
+    <div className="absolute_wrap absolute_wrap_display">
       <div className="absolute_wrap_header">
         <div
           className="circle hover1"

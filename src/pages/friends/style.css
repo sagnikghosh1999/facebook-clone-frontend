@@ -101,6 +101,12 @@
     width: 170px !important;
 }
 
+.text_no_friend {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+}
+
 @media (max-width: 870px) {
     .friends_left {
         width: 100px;

@@ -675,6 +675,11 @@ header {
 }
 
 @media (max-width: 400px) {
+
+    .absolute_wrap_display {
+        left: -3.25rem;
+    }
+
     .header_right .circle_icon:nth-child(3) {
         display: none;
     }
