@@ -1,6 +1,113 @@
-# Getting Started with Create React App
+<div align="center">
+
+  <img src="https://raw.githubusercontent.com/sagnikghosh1999/facebook-clone-frontend/master/public/icons/fb.png" alt="logo" width="160" height="auto" />
+  
+  <h1>Facebook Clone with React JS</h1>
+  
+  <p>
+  Facebook 2.0 with REACT.JS! (Image Uploading, Dark Mode & Light Mode, Facebook Profile, Upload Stories, Multi image upload, Crop Image)
+  </p>
+  
+  
+<!-- Badges -->
+
+<a href="https://socialbook-frontend.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
+![](https://img.shields.io/badge/Maintained-Yes-indigo)
+![](https://img.shields.io/github/forks/sagnikghosh1999/facebook-clone-frontend.svg)
+![](https://img.shields.io/github/stars/sagnikghosh1999/facebook-clone-frontend.svg)
+![](https://img.shields.io/github/issues/sagnikghosh1999/facebook-clone-frontend)
+![](https://img.shields.io/github/last-commit/sagnikghosh1999/facebook-clone-frontend)
+
+<h4>
+    <a href="https://socialbook-frontend.vercel.app">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/sagnikghosh1999/facebook-clone-frontend/blob/master/README.md">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/sagnikghosh1999/facebook-clone-frontend/issues">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/sagnikghosh1999/facebook-clone-frontend/issues">Request Feature</a>
+  </h4>
+</div>
+
+<br />
+
+<!-- Table of Contents -->
+
+## :notebook_with_decorative_cover: Table of Contents
+
+- [About the Project](#star2-about-the-project)
+  - [Screenshots](#camera-screenshots)
+  - [Tech Stack](#space_invader-tech-stack)
+  - [Environment Variables](#key-environment-variables)
+- [Getting Started](#toolbox-getting-started)
+  - [Prerequisites](#bangbang-prerequisites)
+  - [Installation](#gear-installation)
+  - [Run Locally](#running-run-locally)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [Contact](#handshake-contact)
+
+<!-- About the Project -->
+
+## :star2: About the Project
+
+<!-- Screenshots -->
+
+### :camera: Screenshots
+
+<div align="center">
+<a href="https://socialbook-frontend.vercel.app" target="_blank"><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/1.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/8.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/27.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/15.png' alt='image'/></a>
+</div>
+
+## <a href="https://socialbook-frontend.vercel.app" target="_blank">LIVE DEMO 💥</a>
+
+![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
+![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
+
+### :space_invader: Tech Stack
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
+  </ul>
+</details>
+<br />
+
+<table>
+    <tr>
+            <td>
+<a href="#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="" width="30" height="30" /></a>
+        </td>
+</table>
+
+## :toolbox: Getting Started
+
+### :bangbang: Prerequisites
+
+- Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
+- Sign up for a Cloudinary account <a href='https://cloudinary.com/'>HERE</a>
+
+<!-- Env Variables -->
+
+### :key: Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_BACKEND_URL`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### :gear: Installation
+
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ## Available Scripts
 
@@ -29,42 +136,51 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<a href="https://github.com/sagnikghosh1999/facebook-clone-frontend/blob/master/package.json" target="_blank">🔷 Other Dependency Info</a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Run Locally -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### :running: Run Locally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone the project
 
-## Learn More
+```bash
+  git clone https://github.com/sagnikghosh1999/facebook-clone-frontend.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+change directory
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  cd facebook-clone-frontend
+```
 
-### Code Splitting
+Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm install
+```
 
-### Analyzing the Bundle Size
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+  npm run start
+```
 
-### Making a Progressive Web App
+<hr />
+## :handshake: Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Sagnik Ghosh - [@linkedin_handle](https://www.linkedin.com/in/sagnikghosh99) - sagnikghosh813@gmail.com
 
-### Advanced Configuration
+Project Link: [https://github.com/sagnikghosh1999/facebook-clone-frontend.git](https://github.com/sagnikghosh1999/facebook-clone-frontend.git)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<hr />
+<br />
 
-### Deployment
+<div align="center">
+<a href="https://socialbook-frontend.vercel.app" target="_blank"><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/2.png' alt='image'/><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/1.png' alt='image'/></a>
+</div>
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div align="center">Don't forget to leave a star ⭐️</div>
