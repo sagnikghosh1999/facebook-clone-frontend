@@ -55,7 +55,7 @@
 ### :camera: Screenshots
 
 <div align="center">
-<a href="https://socialbook-frontend.vercel.app" target="_blank"><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/1.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/8.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/27.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/15.png' alt='image'/></a>
+<a href="https://socialbook-frontend.vercel.app" target="_blank"><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/facebook-clone/1.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/8.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/27.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/facebook-clone/15.png' alt='image'/></a>
 </div>
 
 ## <a href="https://socialbook-frontend.vercel.app" target="_blank">LIVE DEMO 💥</a>
@@ -179,7 +179,7 @@ Project Link: [https://github.com/sagnikghosh1999/facebook-clone-frontend.git](h
 <br />
 
 <div align="center">
-<a href="https://socialbook-frontend.vercel.app" target="_blank"><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/2.png' alt='image'/><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/1.png' alt='image'/></a>
+<a href="https://socialbook-frontend.vercel.app" target="_blank"><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/2.png' alt='image'/><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/facebook-clone/1.png' alt='image'/></a>
 </div>
 <br />
 
