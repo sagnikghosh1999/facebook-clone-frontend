@@ -57,7 +57,13 @@
 ### :camera: Screenshots
 
 <div align="center">
-<a href="https://socialbook-frontend.vercel.app" target="_blank"><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/facebook-clone/1.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/8.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/27.png' alt='image'/><img width='800' src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/facebook-clone/15.png' alt='image'/></a>
+![08](https://github.com/user-attachments/assets/9fc4105f-2a1e-43eb-809e-bc8ce8428c73)
+![04](https://github.com/user-attachments/assets/f7a6a078-3d4e-49e7-ac57-aa98bacc18cc)
+![03](https://github.com/user-attachments/assets/eabe623d-7cb0-4368-92a5-03061fe4700f)
+![02](https://github.com/user-attachments/assets/5901df6a-a402-470b-92fe-199dada31818)
+![01](https://github.com/user-attachments/assets/60e3f744-c6d6-40db-b3b6-b85ec3f551ea)
+![24](https://github.com/user-attachments/assets/8bcb3872-3a55-423b-ba75-5221b187d315)
+
 </div>
 
 ## <a href="https://socialbook-frontend.vercel.app" target="_blank">LIVE DEMO 💥</a>
