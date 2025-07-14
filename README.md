@@ -181,7 +181,7 @@ Project Link: [https://github.com/sagnikghosh1999/facebook-clone-frontend.git](h
 <br />
 
 <div align="center">
-<a href="https://socialbook-frontend.vercel.app" target="_blank"><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/2.png' alt='image'/><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/main/facebook-clone/1.png' alt='image'/></a>
+<a href="https://socialbook-frontend.vercel.app" target="_blank"><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/refs/heads/main/facebook-clone/2.png?token=GHSAT0AAAAAADHDE4C3MBO7CEEQ5ARFZAWK2DVE6AA' alt='image'/><img   src='https://raw.githubusercontent.com/sagnikghosh1999/images-readme/refs/heads/main/facebook-clone/1.png?token=GHSAT0AAAAAADHDE4C3LJQSCZXYEXF3DOSE2DVE5FA' alt='image'/></a>
 </div>
 <br />
 
